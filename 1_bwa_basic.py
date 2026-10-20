@@ -26,7 +26,7 @@ class State(TypedDict):
 
 # Configured for local Ollama using ChatOllama. 
 # Make sure you have Ollama running and the model pulled (e.g., ollama pull llama3)
-llm = ChatOllama(model="llama3", temperature=0.7)
+llm = ChatOllama(model="qwen2.5:3b", temperature=0.7)
 
 def orchestrator(state: State) -> dict:
     plan = llm.with_structured_output(Plan).invoke(
